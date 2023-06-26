@@ -2,30 +2,66 @@
 <html>
 
 <head>
-    <title>Home Page</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>TNS - ThunderNut Studios Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='dist/css/output.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Code+Latin&display=swap" rel="stylesheet">
 </head>
 
-<body class="background-dark">
-    <div class="diagonal-rectangle"></div>
-    <h1 class="white-text">
-        <p class="first-letter-yellow">THUNDER</p> 
-        <p class="first-letter-yellow">NUT</p> 
-        <p class="first-letter-yellow">STUDIOS</p> 
-    </h1>
-    <div class="white-text">
-        <p class="first-letter-yellow">
-            This is a simple Flask website.
-        </p>
-        <a href="/info">Go to Info Page</a>
-        <br>
-        <a href="/contact">Go to Contact Page</a>
-        <br>
-        <a href="/social">Go to Social Page</a>
-        <br>
-        <a href="/news">Go to News Page</a>
+<body class="bg-zinc-900">
+    <div class="bg-bg-img h-screen w-screen bg-cover bg-center bg-no-repeat">
+        <div class="bg-yellow-400 h-[10px] w-full"></div>
+
+        <div class="bg-yellow-400">
+            <div class="flex h-[25vh] justify-center items-center">
+                <div class="bg-zinc-900 h-[250px] w-[270px] px-2 py-3">
+                    <div class="text-white font-sans text-7xl">
+                        <p class="first-letter:text-yellow-400">THUNDER</p>
+                        <p class="first-letter:text-yellow-400">NUT</p>
+                        <p class="first-letter:text-yellow-400">STUDIOS</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-yellow-400 h-[10px] w-full"></div>
+
+        <div class="bg-zinc-900 h-[80px] w-full">
+            <div class="text-white text-3xl text-center translate-y-1/3 py-1">
+                <a href="/info" class="hover:text-yellow-500">info</a>
+                <a href="/contact" class="hover:text-yellow-500">contact</a>
+                <a href="/social" class="hover:text-yellow-500">social</a>
+                <a href="/news" class="hover:text-yellow-500">news</a>
+            </div>
+        </div>
+
+        <div class="relative">
+            <i class="absolute bottom-4 right-5">
+                <div class="flex">
+                    <a href="https://www.discord.com">
+                        <div
+                            class="bg-[url('../images/icons8-discord-48.svg')] h-[48px] w-[48px] bg-no-repeat bg-cover hover:bg-yellow-500">
+                        </div>
+                    </a>
+                    <a href="https://twitter.com/ThunderNutSTD">
+                        <div
+                            class="bg-[url('../images/icons8-twitter-48.svg')] h-[48px] w-[48px] bg-no-repeat bg-cover hover:bg-yellow-500">
+                        </div>
+                    </a>
+                    <a href="https://www.youtube.com/@thundernutstudios/featured">
+                        <div
+                            class="bg-[url('../images/icons8-youtube-logo-32.svg')] h-[48px] w-[48px] bg-no-repeat bg-cover hover:bg-yellow-500">
+                        </div>
+                    </a>
+                </div>
+            </i>
+        </div>
+
+        {% include 'copyright_template.html' %}
+
     </div>
-    
+
 </body>
 
 </html>

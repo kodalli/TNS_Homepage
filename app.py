@@ -22,7 +22,8 @@ def contact():
 def news():
     return render_template('news.html')
 
-
+# https://flowbite.com/docs/getting-started/flask/
+# npx tailwindcss -i ./static/src/input.css -o ./static/dist/css/output.css --watch
 
 if __name__ == '__main__':
     app.run(debug=True)

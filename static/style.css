@@ -1,9 +1,22 @@
-.background-dark {
+/* .background-dark {
     background-color: #1e1e1e;
+} */
+
+body {
+    background-color: #1e1e1e;
+    color: #ffffff;
+    /* height: 100vh;
+    margin: 0;
+    background: linear-gradient(to top right, #1e1e1e 50%, white 50%); */
+    font-family: "M PLUS Code Latin", sans-serif;
 }
 
-.white-text {
+/* .white-text {
     color: #ffffff;
+} */
+
+.big-font {
+    font-size: 150%;
 }
 
 .yellow-text {
@@ -14,15 +27,56 @@
     color: #fabd2f;
 }
 
-.diagonal-rectangle {
-    position: fixed;
-    top: -100;
+.diagonal-box {
+    position: relative;
+    padding: calc(100vw * 0.09719) 0;
+    margin-top: -1px;
+}
+
+.diagonal-box:before {
+    content: "";
+    position: absolute;
     left: 0;
-    width: 100%;
-    height: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    transform: skewy(-30deg);
+    outline: 1px solid transparent;
+    transform-origin: 75% 0%;
+    backface-visibility: hidden;
     background-color: #fabd2f;
-    transform-origin: top left;
-    transform: rotate(-45deg);
-    z-index: -1;
-  }
-  
+    /* background: linear-gradient(to top right, #fabd2f 50%, #1e1e1e 50%); */
+}
+
+.bg-one:before {
+    background-image: linear-gradient(45deg, #654ea3, #eaafc8);
+}
+
+.bg-two:before {
+    background-image: linear-gradient(-135deg, #ff0084, #33001b);
+}
+
+.bg-three:before {
+    background-image: linear-gradient(-135deg, #007, #003);
+}
+
+.content {
+    max-width: 100vw;
+    margin: 0 auto;
+    padding: 1.5em;
+    position: relative;
+}
+
+.clip-path {
+    position: relative;
+    margin-top: calc(((100vw * 0.09719) * -1) - 2px);
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.05) 50%, 0, transparent 100%),
+        linear-gradient(-135deg, #0cc, #066);
+    background-size: .5em .5em, 100% 100%;
+    padding: calc(((100vw * 0.09719) * 2) - ((100vw * 0.09719) - (100vw * 0.09719))) 0 4em;
+    clip-path: polygon(0% calc((100vw * 0.09719) * 2),
+            100% 0%,
+            100% 100%,
+            0% 100%);
+}

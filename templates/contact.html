@@ -1,11 +1,41 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>Contact Page</title>
+    <title>TNS - ThunderNut Studios Contact</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='dist/css/output.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Code+Latin&display=swap" rel="stylesheet">
 </head>
-<body>
-    <h1>Contact Us</h1>
-    <p>This is the Contact Page of our simple Flask website.</p>
-    <a href="/">Go Back to Home Page</a>
+
+<body class="bg-bg-img h-screen w-screen bg-cover bg-center bg-no-repeat">
+    {% include 'navbar_template.html' %}
+
+    <div class="container mx-auto p-6">
+        <h1 class="text-3xl font-bold mb-6">Contact Us</h1>
+        <form action="#" method="POST">
+            <div class="mb-6">
+                <label for="name" class="block text-gray-700 font-bold mb-2">Name:</label>
+                <input type="text" id="name" name="name" required class="w-full p-2 border border-gray-400 rounded">
+            </div>
+            <div class="mb-6">
+                <label for="email" class="block text-gray-700 font-bold mb-2">Email:</label>
+                <input type="text" id="email" name="email" required class="w-full p-2 border border-gray-400 rounded">
+            </div>
+            <div class="mb-6">
+                <label for="message" class="block text-gray-700 font-bold mb-2">Message:</label>
+                <textarea id="message" name="message" rows="10" required
+                    class="w-full p-2 border border-gray-400 rounded"></textarea>
+            </div>
+            <div class="mb-6">
+                <input type="submit" value="Submit"
+                    class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded cursor-pointer">
+            </div>
+        </form>
+    </div>
+
+    {% include 'copyright_template.html' %}
 </body>
+
 </html>
